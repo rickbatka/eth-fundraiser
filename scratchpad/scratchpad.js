@@ -1,19 +1,22 @@
 var Fundraiser = artifacts.require("Fundraiser");
+/*
 
-/* var fundraiserContract;
-Fundraiser.new("Test fundraiser 2").then(function(instance){
+var fundraiserContract;
+Fundraiser.new("Test fundraiser 3", 1e10).then(function(instance){
     fundraiserContract = instance;
     //console.log(fundraiserContract.instanceName());
-    return fundraiserContract.instanceName.call();
+    return fundraiserContract.name.call();
 })
 
 .then(function(bb){
     console.log(bb);
 });
- */
 
 
-    Fundraiser.at("0x2a504b5e7ec284aca5b6f49716611237239f0b97").instanceName.call()
+*/ 
+
+    Fundraiser.at("0x2e335f247e91caa168c64b63104c4475b2af3942").name.call()
     .then(function(bb){
         console.log(bb);
-    });
+    }); 
+    
