@@ -1,18 +1,44 @@
 {
   "contractName": "Fundraiser",
-  "abi": [],
-  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820173680c1363ade3cfb4b90061405dd46e84c32e4a78a25e3d6b1596068a4046a0029",
-  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820173680c1363ade3cfb4b90061405dd46e84c32e4a78a25e3d6b1596068a4046a0029",
-  "sourceMap": "28:30:0:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "28:30:0:-;;;;;",
-  "source": "pragma solidity ^0.4.17;\r\n\r\ncontract Fundraiser {\r\n    \r\n}",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "instanceName",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_instanceName",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b60405161029a38038061029a833981016040528080518201919050508060009080519060200190610041929190610048565b50506100ed565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061008957805160ff19168380011785556100b7565b828001600101855582156100b7579182015b828111156100b657825182559160200191906001019061009b565b5b5090506100c491906100c8565b5090565b6100ea91905b808211156100e65760008160009055506001016100ce565b5090565b90565b61019e806100fc6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635d48fe2914610046575b600080fd5b341561005157600080fd5b6100596100d4565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016a5780601f1061013f5761010080835404028352916020019161016a565b820191906000526020600020905b81548152906001019060200180831161014d57829003601f168201915b5050505050815600a165627a7a723058202f26fafc973dd01f53da6a2b527700145692dd032a03d2ae20c5f26605d4d84e0029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635d48fe2914610046575b600080fd5b341561005157600080fd5b6100596100d4565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016a5780601f1061013f5761010080835404028352916020019161016a565b820191906000526020600020905b81548152906001019060200180831161014d57829003601f168201915b5050505050815600a165627a7a723058202f26fafc973dd01f53da6a2b527700145692dd032a03d2ae20c5f26605d4d84e0029",
+  "sourceMap": "28:161:0:-;;;90:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;165:13;150:12;:28;;;;;;;;;;;;:::i;:::-;;90:96;28:161;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "28:161:0:-;;;;;;;;;;;;;;;;;;;;;;;;55:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;55:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\r\n\r\ncontract Fundraiser {\r\n    string public instanceName;\r\n\r\n    function Fundraiser(string _instanceName) public {\r\n        instanceName = _instanceName;\r\n    }\r\n}",
   "sourcePath": "C:\\dev\\eth-fundraiser\\contracts\\Fundraiser.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/C/dev/eth-fundraiser/contracts/Fundraiser.sol",
       "exportedSymbols": {
         "Fundraiser": [
-          2
+          14
         ]
       }
     },
@@ -42,28 +68,182 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            2
+            14
           ],
           "name": "Fundraiser",
-          "nodes": [
-            null
-          ],
-          "scope": 3
+          "scope": 15
         },
-        "id": 2,
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "instanceName",
+              "scope": 14,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string storage pointer"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "55:6:0"
+              }
+            ],
+            "id": 3,
+            "name": "VariableDeclaration",
+            "src": "55:26:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "Fundraiser",
+              "payable": false,
+              "scope": 14,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_instanceName",
+                      "scope": 13,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 4,
+                        "name": "ElementaryTypeName",
+                        "src": "110:6:0"
+                      }
+                    ],
+                    "id": 5,
+                    "name": "VariableDeclaration",
+                    "src": "110:20:0"
+                  }
+                ],
+                "id": 6,
+                "name": "ParameterList",
+                "src": "109:22:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7,
+                "name": "ParameterList",
+                "src": "139:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 3,
+                              "type": "string storage ref",
+                              "value": "instanceName"
+                            },
+                            "id": 8,
+                            "name": "Identifier",
+                            "src": "150:12:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5,
+                              "type": "string memory",
+                              "value": "_instanceName"
+                            },
+                            "id": 9,
+                            "name": "Identifier",
+                            "src": "165:13:0"
+                          }
+                        ],
+                        "id": 10,
+                        "name": "Assignment",
+                        "src": "150:28:0"
+                      }
+                    ],
+                    "id": 11,
+                    "name": "ExpressionStatement",
+                    "src": "150:28:0"
+                  }
+                ],
+                "id": 12,
+                "name": "Block",
+                "src": "139:47:0"
+              }
+            ],
+            "id": 13,
+            "name": "FunctionDefinition",
+            "src": "90:96:0"
+          }
+        ],
+        "id": 14,
         "name": "ContractDefinition",
-        "src": "28:30:0"
+        "src": "28:161:0"
       }
     ],
-    "id": 3,
+    "id": 15,
     "name": "SourceUnit",
-    "src": "0:58:0"
+    "src": "0:189:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xf204a4ef082f5c04bb89f7d5e6568b796096735a"
+    }
+  },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-22T14:29:54.102Z"
+  "updatedAt": "2018-01-22T14:51:20.167Z"
 }
