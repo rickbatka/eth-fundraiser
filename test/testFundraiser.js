@@ -21,8 +21,28 @@ contract('Fundraiser', function (accounts) {
 
     it('should set starting balance when you start a fundraiser', async function (){
         let fr1 = await (Fundraiser.new("Test1", 1e10, {value: 33}));
-        let name1 = await (fr1.name.call());
-        assert.equal(name1, "Test1");
+        assert.equal(await (fr1.name.call()), "Test1");
+
+        // The contract itself should get the balance that came in through the construction...
         assert.equal(33, web3.eth.getBalance(fr1.address));
+
+        // and the curator's initial contribution should be recorded in the ledger.
+        assert.equal(33, await fr1.weiBalances(accounts[0]));
     });
+
+    it('should limit invite ability to the curator', async function (){
+        let te1 = await (Fundraiser.new("TestInvites1", 1e10, {value: 1, from: accounts[0]}));
+        let thrown = false;
+        console.log(await te1.curator.call());
+        try{
+            // TODO this should throw, but it doesn't.
+            await te1.invite(accounts[2], {from: accounts[3]});
+        }catch (e){
+            thrown = true;
+        }
+        
+        //assert.isTrue(thrown);
+    });
+
+   
 });

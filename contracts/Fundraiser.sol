@@ -1,9 +1,10 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.18;
 
 contract Fundraiser {
-    address private curator;
+    address public curator;
     string public name;
     uint public weiGoal;
+    address[] private invitees;
     mapping(address => uint) public weiBalances;
 
     function Fundraiser(string _name, uint _weiGoal) public payable {
@@ -14,13 +15,12 @@ contract Fundraiser {
         weiBalances[curator] = msg.value;
     }
 
-    function invite(address _invitee) public payable onlyCurator {
-        require(msg.value > 0);
-        weiBalances[_invitee] = msg.value;
+    function invite(address invitee) public onlyCurator {
+        invitees.push(invitee);
         // TODO fire event that can be detected to send emails, etc...
     }
 
-    function contribute() public payable onlyInvitees {
+    function contribute() public payable onlyContributors {
         weiBalances[msg.sender] += msg.value;
     }
 
@@ -29,7 +29,7 @@ contract Fundraiser {
         _;
     }
 
-    modifier onlyInvitees {
+    modifier onlyContributors {
         require(weiBalances[msg.sender] > 0);
         _;
     }
