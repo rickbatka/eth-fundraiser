@@ -7,9 +7,11 @@ contract Fundraiser {
     string public name;
     uint public weiGoal;
     address[] private members;
-    mapping(address => uint) private weiBalances;
+    mapping(address => uint) public weiBalances;
+    bool public active;
 
     function Fundraiser(string _name, uint _weiGoal) public {
+        active = true;
         curator = msg.sender;
         name = _name;
         weiGoal = _weiGoal;
@@ -26,12 +28,23 @@ contract Fundraiser {
         _;
     }
 
-    function invite(address invitee) public onlyCurator {
+    modifier onlyActive {
+        require(active);
+        _;
+    }
+
+    modifier onlyAbandoned {
+        require(!active);
+        _;
+    }
+
+    function invite(address invitee) public onlyCurator onlyActive {
         members.push(invitee);
         // TODO fire event that can be detected to send emails, etc...
     }
 
-    function contribute() public payable onlyMembers {
+    function contribute() public payable onlyMembers onlyActive {
+        assert(msg.value > 0);
         weiBalances[msg.sender] += msg.value;
     }
 
@@ -41,5 +54,25 @@ contract Fundraiser {
             total += weiBalances[members[i]];
         }
         return total;
+    }
+
+    function abandon() public onlyCurator onlyActive () {
+        var totalWeiContributed = getTotalWeiContributed();
+        assert(this.balance == totalWeiContributed);
+        active = false;
+    }
+
+    function withdrawRefund() public onlyAbandoned returns (bool) {
+        var totalWeiContributed = getTotalWeiContributed();
+        assert(this.balance == totalWeiContributed);
+        assert(!active);
+
+        if (weiBalances[msg.sender] > 0) {
+            msg.sender.transfer(weiBalances[msg.sender]);
+            weiBalances[msg.sender] = 0;
+            return true;
+        }
+
+        return false;
     }
 }
