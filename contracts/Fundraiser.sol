@@ -1,7 +1,9 @@
 pragma solidity ^0.4.18;
 import {ArrayUtil} from "./ArrayUtil.sol";
 
-/** @title Socio-anarchist crowdfunging platform. */
+/** @title eth-fundraiser, a socio-anarchist crowdfunging platform. 
+  * @author Rick Batka
+  */
 contract Fundraiser {
     using ArrayUtil for address[];
     address public curator;
