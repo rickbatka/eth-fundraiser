@@ -37,7 +37,7 @@ contract('Fundraiser', function (accounts) {
         assert.equal(23, web3.eth.getBalance(fr1.address));
         assert.equal(23, (await fr1.getTotalWeiContributed()).toNumber());
         
-        // TODO require() not throwing despite enforcing its rule?
+        // TODO ganache bug, promises not being rejected on revert
         //assert.isTrue(thrown);
     });
 });

@@ -56,6 +56,18 @@ contract Fundraiser {
         return total;
     }
 
+    function cashOut() public onlyCurator onlyActive returns (bool) {
+        var totalWeiContributed = getTotalWeiContributed();
+        assert(this.balance == totalWeiContributed);
+        if (totalWeiContributed >= weiGoal) {
+             msg.sender.transfer(this.balance);
+             active = false;
+             return true;
+        }
+        
+        return false;
+    }
+
     function abandon() public onlyCurator onlyActive () {
         var totalWeiContributed = getTotalWeiContributed();
         assert(this.balance == totalWeiContributed);
@@ -65,7 +77,6 @@ contract Fundraiser {
     function withdrawRefund() public onlyAbandoned returns (bool) {
         var totalWeiContributed = getTotalWeiContributed();
         assert(this.balance == totalWeiContributed);
-        assert(!active);
 
         if (weiBalances[msg.sender] > 0) {
             msg.sender.transfer(weiBalances[msg.sender]);
