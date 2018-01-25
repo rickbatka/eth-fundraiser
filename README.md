@@ -4,7 +4,7 @@ A [socio-anarchist](https://en.wikipedia.org/wiki/Social_anarchism) crowdfunding
 
 **WARNING! This is an experimental project and is not intended for production use. DO NOT USE THIS CONTRACT.**
 
-Like k-ckstarter without the middleman
+Like k-ckstarter without the middleman.
 -------------------
 
 eth-fundraiser is a barebones, middleman-free distributed social crowdfunding platform on the Ethereum blockchain.
