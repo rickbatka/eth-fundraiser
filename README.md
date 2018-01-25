@@ -37,7 +37,7 @@ Once the fundraising goal is met or exceeded, the curator may cash out the fundr
 try{
   await fundraiserInstance.cashOut();
 }catch (e){
-  //console.log(e);
+  ...
 }
 assert.equal(0, web3.eth.getBalance(fundraiserInstance.address));
 ```
@@ -62,7 +62,7 @@ try{
     assert(web3.eth.getBalance(fundraiserInstance.address).equals(0));
     assert((await fundraiserInstance.getTotalWeiContributed()).equals(0));
 }catch (e){
-    //console.log(e);
+    ...
 }
 ```
 
