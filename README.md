@@ -1,3 +1,5 @@
+[View the codumentation on github pages at https://rickbatka.github.io/eth-fundraiser/ -->](https://rickbatka.github.io/eth-fundraiser/)
+
 # eth-fundraiser
 A [socio-anarchist](https://en.wikipedia.org/wiki/Social_anarchism) crowdfunding platform.
 ===================
