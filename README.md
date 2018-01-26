@@ -1,4 +1,4 @@
-[View the codumentation on github pages at https://rickbatka.github.io/eth-fundraiser/ -->](https://rickbatka.github.io/eth-fundraiser/)
+[View the full documentation on github pages at https://rickbatka.github.io/eth-fundraiser -->](https://rickbatka.github.io/eth-fundraiser/)
 
 # eth-fundraiser
 A [socio-anarchist](https://en.wikipedia.org/wiki/Social_anarchism) crowdfunding platform.
@@ -82,4 +82,4 @@ Compile & test
 >truffle test
 ```
 
-More documentation to come...
+[View the full documentation on github pages at https://rickbatka.github.io/eth-fundraiser -->](https://rickbatka.github.io/eth-fundraiser/)
